@@ -1,3 +1,4 @@
+---@diagnostic disable: deprecated, return-type-mismatch
 return {
   {
     'stevearc/conform.nvim',
@@ -24,13 +25,15 @@ return {
           nix = { 'nixfmt' },
           ejs = { 'prettier' },
           go = { 'go fmt' },
-          -- php = { 'pint', 'php-cs-fixer' },
           php = function()
-            local root_dir = require('lspconfig').util.root_pattern 'artisan'
-            if root_dir then
-              return { 'pint' }
-            else
-              return { 'php-cs-fixer' }
+            local util = require('lspconfig').util
+            return function(params)
+              local root = util.root_pattern('artisan', 'composer.json', '.git')(params.bufname)
+              if root and util.path.exists(util.path.join(root, 'artisan')) then
+                return { 'pint' }
+              else
+                return { 'php-cs-fixer' }
+              end
             end
           end,
           qml = { 'qmlfmt' },
