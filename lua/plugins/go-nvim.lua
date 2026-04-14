@@ -8,6 +8,7 @@ return {
   opts = {
     diagnostic = false,
     lsp_gofumpt = true,
+    lsp_codelens = false,
     -- lsp_keymaps = false,
     -- other options
   },
