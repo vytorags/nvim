@@ -24,7 +24,15 @@ return {
           nix = { 'nixfmt' },
           ejs = { 'prettier' },
           go = { 'go fmt' },
-          php = { 'php-cs-fixer' },
+          -- php = { 'pint', 'php-cs-fixer' },
+          php = function()
+            local root_dir = require('lspconfig').util.root_pattern 'artisan'
+            if root_dir then
+              return { 'pint' }
+            else
+              return { 'php-cs-fixer' }
+            end
+          end,
           qml = { 'qmlfmt' },
           rust = { 'rustfmt' },
         },

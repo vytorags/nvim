@@ -37,8 +37,10 @@ local options = {
   scrolloff = 8,
   sidescrolloff = 8,
   hlsearch = true,
+  updatetime = 100,
+  timeoutlen = 200,
+  redrawtime = 1500,
 }
-
 for k, v in pairs(options) do
   vim.opt[k] = v
 end

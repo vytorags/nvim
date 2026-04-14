@@ -10,6 +10,7 @@ vim.g.have_nerd_font = nixCats 'have_nerd_font'
 require 'config.options'
 require 'config.keymaps'
 require 'config.lskeymap'
+require 'config.perf'
 
 local function getlockfilepath()
   if require('nixCatsUtils').isNixCats and type(nixCats.settings.unwrappedCfgPath) == 'string' then

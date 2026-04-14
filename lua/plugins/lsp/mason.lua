@@ -26,6 +26,9 @@ return {
           -- "jsonls",
           -- "intelephense",
           'qmlls',
+          'intelephense',
+          'rust_analyzer',
+          'jdtls',
         },
         automatic_installation = require('nixCatsUtils').lazyAdd(true, false),
       }

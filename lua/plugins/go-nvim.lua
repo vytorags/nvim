@@ -7,8 +7,16 @@ return {
   },
   opts = {
     diagnostic = false,
+    lsp_gofumpt = true,
     -- lsp_keymaps = false,
     -- other options
+  },
+  keys = {
+    { "<leader>got", "<cmd>GoTest<cr>", desc = "GoTest (current func)" },
+    { "<leader>goc", "<cmd>GoCoverage toggle<cr>", desc = "GoCoverage toggle" },
+    { "<leader>goi", "<cmd>GoImpl<cr>", desc = "GoImpl" },
+    { "<leader>gos", "<cmd>GoFillStruct<cr>", desc = "GoFillStruct" },
+    { "<leader>goT", "<cmd>GoAddTag<cr>", desc = "GoAddTag" },
   },
   -- config = function(lp, opts)
   --     require("go").setup(opts)
