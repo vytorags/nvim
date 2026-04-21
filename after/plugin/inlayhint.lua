@@ -21,7 +21,6 @@ local function setup_inlay_hints()
     local nontext = hl 'NonText'
     local folded = hl 'Folded'
 
-    -- fundo discreto sem usar CursorLine
     local bg = folded.bg or line_nr.bg or nontext.bg or normal.bg
 
     vim.api.nvim_set_hl(0, 'LspInlayHint', {
